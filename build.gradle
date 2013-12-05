@@ -1,0 +1,19 @@
+// @author Jaroslav Vitku [vitkujar@fel.cvut.cz]
+
+// Create the runnable application from this project into build/lib/bin.. ? [./gradlew installApp]
+apply plugin: 'application'
+mainClassName = 'ctu.nengoros.Jrosparam'
+
+version             = '0.0.1-SNAPSHOT'
+group               = 'ctu.nengoros'
+
+// This project depends on compilation of rosjava_core
+dependencies {
+  compile 'ros.rosjava_core:rosjava:0.0.0-SNAPSHOT', 'junit:junit:4.8.2'
+}
+
+defaultTasks 'installApp', 'eclipse'
+
+// we use install by default on the entire multiproject, 
+// but we wish to create also an application here..
+install.dependsOn installApp
