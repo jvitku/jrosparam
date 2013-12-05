@@ -1,0 +1,54 @@
+ctu.nengoros.rosparam.test.SetGeôÇ[Jroscore]: Server successfully launched on address: localhost 11311.
+emptùÉXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar <init>
+emptùINFO: MasterXmlRpcEndpoint URI: http://localhost:11311/ŠemptùÓXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar onPublisherAdded
+emptùÉINFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</jrosparam, http://127.0.0.1:57368/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+emptùÍXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar callMaster
+emptùINFO: Response<Success, Success, []>ŠemptùæXII 05, 2013 9:52:25 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
+emptùÈINFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</jrosparam, http://127.0.0.1:57368/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+emptùÃXII 05, 2013 9:52:25 ODP. org.ros.internal.node.RosoutLogger info
+emptùINFO: Rosparam node Launched! Waiting for commands..ŠemptùÕXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar onPublisherRemoved
+emptùËINFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</jrosparam, http://127.0.0.1:57368/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+emptùÍXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar callMaster
+emptùINFO: Response<Success, Success, 1>ŠemptùèXII 05, 2013 9:52:25 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
+emptùÊINFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</jrosparam, http://127.0.0.1:57368/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+emptùÓXII 05, 2013 9:52:25 ODP. org.ros.node.DefaultNodeMainExecutor safelyShutdownNode
+emptùINFO: Shutdown successful.ŠsetGetDeleteStrinçÉXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar <init>
+setGetDeleteStrinçINFO: MasterXmlRpcEndpoint URI: http://localhost:11311/ŠsetGetDeleteStrinçÓXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar onPublisherAdded
+setGetDeleteStrinçÉINFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</jrosparam, http://127.0.0.1:57374/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+setGetDeleteStrinçÍXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar callMaster
+setGetDeleteStrinçINFO: Response<Success, Success, []>ŠsetGetDeleteStrinçæXII 05, 2013 9:52:25 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
+setGetDeleteStrinçÈINFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</jrosparam, http://127.0.0.1:57374/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+setGetDeleteStrinçÃXII 05, 2013 9:52:25 ODP. org.ros.internal.node.RosoutLogger info
+setGetDeleteStrinçINFO: Rosparam node Launched! Waiting for commands..ŠsetGetDeleteStrinçÕXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar onPublisherRemoved
+setGetDeleteStrinçËINFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</jrosparam, http://127.0.0.1:57374/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+setGetDeleteStrinçÍXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar callMaster
+setGetDeleteStrinçINFO: Response<Success, Success, 1>ŠsetGetDeleteStrinçèXII 05, 2013 9:52:25 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
+setGetDeleteStrinçÊINFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</jrosparam, http://127.0.0.1:57374/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+setGetDeleteStrinçÓXII 05, 2013 9:52:25 ODP. org.ros.node.DefaultNodeMainExecutor safelyShutdownNode
+setGetDeleteStrinçINFO: Shutdown successful.ŠsetGetDeleteBooleaîÉXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar <init>
+setGetDeleteBooleaîINFO: MasterXmlRpcEndpoint URI: http://localhost:11311/ŠsetGetDeleteBooleaîÓXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar onPublisherAdded
+setGetDeleteBooleaîÉINFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</jrosparam, http://127.0.0.1:57386/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+setGetDeleteBooleaîÍXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar callMaster
+setGetDeleteBooleaîINFO: Response<Success, Success, []>ŠsetGetDeleteBooleaîæXII 05, 2013 9:52:25 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
+setGetDeleteBooleaîÈINFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</jrosparam, http://127.0.0.1:57386/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+setGetDeleteBooleaîÃXII 05, 2013 9:52:25 ODP. org.ros.internal.node.RosoutLogger info
+setGetDeleteBooleaîINFO: Rosparam node Launched! Waiting for commands..ŠsetGetDeleteBooleaîÕXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar onPublisherRemoved
+setGetDeleteBooleaîËINFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</jrosparam, http://127.0.0.1:57386/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+setGetDeleteBooleaîÍXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar callMaster
+setGetDeleteBooleaîINFO: Response<Success, Success, 1>ŠsetGetDeleteBooleaîèXII 05, 2013 9:52:25 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
+setGetDeleteBooleaîÊINFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</jrosparam, http://127.0.0.1:57386/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+setGetDeleteBooleaîÓXII 05, 2013 9:52:25 ODP. org.ros.node.DefaultNodeMainExecutor safelyShutdownNode
+setGetDeleteBooleaîINFO: Shutdown successful.ŠnamespaceAndDoublåÉXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar <init>
+namespaceAndDoublåINFO: MasterXmlRpcEndpoint URI: http://localhost:11311/ŠnamespaceAndDoublåÓXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar onPublisherAdded
+namespaceAndDoublåÉINFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</jrosparam, http://127.0.0.1:57409/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+namespaceAndDoublåÍXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar callMaster
+namespaceAndDoublåINFO: Response<Success, Success, []>ŠnamespaceAndDoublåæXII 05, 2013 9:52:25 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
+namespaceAndDoublåÈINFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</jrosparam, http://127.0.0.1:57409/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+namespaceAndDoublåÃXII 05, 2013 9:52:25 ODP. org.ros.internal.node.RosoutLogger info
+namespaceAndDoublåINFO: Rosparam node Launched! Waiting for commands..ŠnamespaceAndDoublåÕXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar onPublisherRemoved
+namespaceAndDoublåËINFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</jrosparam, http://127.0.0.1:57409/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+namespaceAndDoublåÍXII 05, 2013 9:52:25 ODP. org.ros.internal.node.client.Registrar callMaster
+namespaceAndDoublåINFO: Response<Success, Success, 1>ŠnamespaceAndDoublåèXII 05, 2013 9:52:25 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
+namespaceAndDoublåÊINFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</jrosparam, http://127.0.0.1:57409/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+namespaceAndDoublåÓXII 05, 2013 9:52:25 ODP. org.ros.node.DefaultNodeMainExecutor safelyShutdownNode
+namespaceAndDoublåINFO: Shutdown successful.Šctu.nengoros.rosparam.test.SetGeô[Jroscore]: OK, shutting down the serverŠctu.nengoros.rosparam.test.SetGeô[Jroscore]: Shutdown complete, exiting.Š

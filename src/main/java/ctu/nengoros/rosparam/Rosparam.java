@@ -11,7 +11,7 @@ import org.ros.node.parameter.ParameterTree;
 /**
  * First, basic implementation of rosparam node. This just starts and waits for commands.
  * Assumed that the RosRunner is used, the RosRunner.start() uses awaitStart method, so 
- * we can start node and imediately call set, get().. methods.
+ * we can start node and immediately call set, get().. methods.
  *  
  * @author Jaroslav Vitku
  *
@@ -108,6 +108,14 @@ public class Rosparam extends AbstractNodeMain implements RosparamInt{
 
 	@Override
 	public String printTree() {
+		// concurrency..
+		while(ptc==null){
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 		return ptc.getAll();
 	}
 

@@ -29,7 +29,7 @@ import ctu.nengoros.RosRunner;
  *
  */
 public class Jrosparam {
-
+	
 	static final String note = "Jrosparam, a Java implementation of rosparam is a command-line tool" +
 			"for getting, setting and deleting parameters from the ROS master (par.server)";
 
@@ -46,7 +46,11 @@ public class Jrosparam {
 
 	private final RosparamInt par;
 
-
+	public static final String listEmpty= "No params!";
+	public static final String notFound = "Parameter not found!";
+	public static final String unsupported= "Unsupported command!";
+	public static final String tooLong = "Error: Command too long!";
+	
 	public Jrosparam(RosparamInt p){
 		this.par = p;
 	}
@@ -80,7 +84,7 @@ public class Jrosparam {
 		if(args.length == 0){
 			System.out.println("\nReady...\n");
 		}else{
-			jr.processCommand(args);
+			System.out.println(jr.processCommand(args));
 		}
 
 		while(true){
@@ -100,74 +104,70 @@ public class Jrosparam {
 			printUsage();
 		}
 		list = querry.split(" ");
-		processCommand(list);
+		System.out.println(processCommand(list));
 	}
 
-	private void processCommand(String[] list){
+	public String processCommand(String[] list){
 		if(list.length == 0)
-			return;
+			return "";
 		
+		String out = "";
 		this.awaitParameterTreeObtained();
 
 		if(list.length == 1){
 			if(list[0].equalsIgnoreCase("list")){
-				System.out.println(par.printTree());
-				return;
+				return par.printTree();
 			}
 			if(list[0].equalsIgnoreCase("h") || list[0].equalsIgnoreCase("help")){
-				System.out.println("-------------------------");
-				printUsage();
-				System.out.println("-------------------------");
-				return;
+				out = "-------------------------\n";
+				out = out + getUsage();
+				out = out+ "-------------------------\n";
+				return out;
 			}
-			System.err.println("Unsupported command");
-			return;
+			return unsupported;
 		}
 		if(list.length == 2){
 			if(list[0].equalsIgnoreCase("delete")){
 				par.delete(list[1]);
-				return;
+				return "";
 			}
 			if(list[0].equalsIgnoreCase("get")){
 				try {
-					System.out.println(par.getStringValofParam(list[1]));
+					return par.getStringValofParam(list[1]);
 				} catch (Exception e) {
-					System.err.println("Parameter not found");
+					return notFound;
 				}
-				return;
 			}
-			System.err.println("Unsupported command");
-			return;
+			return unsupported;
 		}
 		if(list.length == 3){
 			if(list[0].equalsIgnoreCase("set")){
 				if(list[2].equalsIgnoreCase("true")){
 					par.set(list[1], true);
-					return;
+					return "";
 				}
 				if(list[2].equalsIgnoreCase("false")){
 					par.set(list[1], false);
-					return;
+					return "";
 				}
 				try{
 					Integer i = Integer.parseInt(list[2]);
 					par.set(list[1], i);
-					return;
+					return "";
 				}catch(Exception e){ 
 				}
 				try{
 					Double d = Double.parseDouble(list[2]);
 					par.set(list[1], d);
-					return;
+					return "";
 				}catch(Exception e){
 				}
 				par.set(list[1], list[2]);
-				return;
+				return "";
 			}
-			System.err.println("Unsupported command");
-			return;
+			return unsupported;
 		}
-		System.err.println("Error: Command too long!");
+		return tooLong;
 	}
 
 
@@ -200,9 +200,12 @@ public class Jrosparam {
 	}
 
 	private static void printUsage(){
-		System.out.println(note+"\n");
-		System.out.println(cmds);
-		System.out.println(footnote+"\n");
+		System.out.println(getUsage());
+	}
+	
+	public static String getUsage(){
+		String out = note+"\n"+cmds+"\n"+footnote+"\n";
+		return out;
 	}
 
 
