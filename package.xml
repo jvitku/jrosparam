@@ -12,6 +12,8 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <build_depend>rosjava_core</build_depend>
+  <build_depend>jroscore</build_depend>
   <run_depend>rosjava_core</run_depend>
+  <run_depend>jroscore</run_depend>
 </package>
 

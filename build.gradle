@@ -10,6 +10,10 @@ group               = 'ctu.nengoros'
 // This project depends on compilation of rosjava_core
 dependencies {
   compile 'ros.rosjava_core:rosjava:0.0.0-SNAPSHOT', 'junit:junit:4.8.2'
+  
+  // use of RosRunner
+  testCompile 'ctu.nengoros:jroscore:0.0.2-SNAPSHOT' 
+  compile 'ctu.nengoros:jroscore:0.0.2-SNAPSHOT'
 }
 
 defaultTasks 'installApp', 'eclipse'

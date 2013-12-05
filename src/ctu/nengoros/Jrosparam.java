@@ -18,9 +18,8 @@ import org.ros.node.NodeMain;
  */
 public class Jrosparam {
 
-	static final String note = "jrosparam, a Java implementation of rosparam is a command-line tool" +
-			"for getting, setting and deleting parameters from the ROS" +
-			"Parameter Server.";
+	static final String note = "Jrosparam, a Java implementation of rosparam is a command-line tool" +
+			"for getting, setting and deleting parameters from the ROS master (par.server)";
 	
 	static final String cmds = "Commands:\n" +
 			"\tjrosparam set\t set parameter\n"+
@@ -51,11 +50,12 @@ public class Jrosparam {
 	}
 	
 	private static boolean argsOK(String[] args){
+		
 		if(args.length==0){
 			printUsage();
 			return false;
 		}else if(args.length>3){
-			System.err.println("ERROR: too many arguments specified");
+			System.err.println("ERROR: too many arguments specified!\n");
 			printUsage();
 			return false;
 		}

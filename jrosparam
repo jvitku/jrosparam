@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# Java implementation of rosparam, a ROS tool for settings and readings parameters from the ros master.
+# 
+# Requirements
+#   -run ./gradlew installApp from here
+#       this ensures that all required jar files (other than rosjava and this project) will be in build/install..... directory
+#   -pass max 5 command line arguments, where the first one is name of your ROS node
+#   
+# author Jaroslav Vitku [vitkujar@fel.cvut.cz]
+#
+# E: choose between gradle:0 and eclipse:1
+
+E=1
+
+RJ=../../rosjava_core/
+
+JAR=build/install/jrosparam/lib/*
+
+if [ $E = "1" ]; then
+	CL=bin
+else
+	CL=build/classes
+fi
+
+
+#ROSJAVA=$RJ/rosjava/$CL/:$RJ/apache_xmlrpc_client/$CL/:$RJ/apache_xmlrpc_common/$CL/:$RJ/apache_xmlrpc_server/$CL/:$RJ/rosjava_bootstrap/$CL/:$RJ/rosjava_geometry/$CL/:$RJ/rosjava_messages/$CL/
+
+
+#echo $CL:$ROSJAVA:$JAR
+
+#java -cp $CL:$ROSJAVA:$JAR org.ros.RosRun org.hanns.demonodes.time.pubsub.Sub $0 $1 $2 $3 $4
+java -cp $CL:$JAR ctu.nengoros.Jrosparam $1 $2 $3 $4 $5
