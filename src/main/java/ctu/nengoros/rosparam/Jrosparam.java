@@ -79,6 +79,8 @@ public class Jrosparam {
 
 		if(args.length == 0){
 			System.out.println("\nReady...\n");
+		}else{
+			jr.processCommand(args);
 		}
 
 		while(true){
@@ -104,10 +106,18 @@ public class Jrosparam {
 	private void processCommand(String[] list){
 		if(list.length == 0)
 			return;
+		
+		this.awaitParameterTreeObtained();
 
 		if(list.length == 1){
 			if(list[0].equalsIgnoreCase("list")){
 				System.out.println(par.printTree());
+				return;
+			}
+			if(list[0].equalsIgnoreCase("h") || list[0].equalsIgnoreCase("help")){
+				System.out.println("-------------------------");
+				printUsage();
+				System.out.println("-------------------------");
 				return;
 			}
 			System.err.println("Unsupported command");
@@ -161,9 +171,20 @@ public class Jrosparam {
 	}
 
 
+	/**
+	 * Here was a tiny NullPointer problem (probably slow communication with the master)
+	 */
+	private void awaitParameterTreeObtained(){
+		while(this.par == null){
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 
 	private static boolean argsOK(String[] args){
-
 		// need help?
 		if(args.length == 1 && (args[0].equalsIgnoreCase("-h") || args[0].equalsIgnoreCase("-help"))){
 			printUsage();
