@@ -104,14 +104,15 @@ public class Jrosparam {
 			printUsage();
 		}
 		list = querry.split(" ");
-		System.out.println(processCommand(list));
+		String result = processCommand(list);
+		if(result.length()>0)
+			System.out.println(processCommand(list));
 	}
 
 	public String processCommand(String[] list){
 		if(list.length == 0)
 			return "";
 		
-		String out = "";
 		this.awaitParameterTreeObtained();
 
 		if(list.length == 1){
@@ -119,7 +120,7 @@ public class Jrosparam {
 				return par.printTree();
 			}
 			if(list[0].equalsIgnoreCase("h") || list[0].equalsIgnoreCase("help")){
-				out = "-------------------------\n";
+				String out = "-------------------------\n";
 				out = out + getUsage();
 				out = out+ "-------------------------\n";
 				return out;
@@ -170,7 +171,6 @@ public class Jrosparam {
 		return tooLong;
 	}
 
-
 	/**
 	 * Here was a tiny NullPointer problem (probably slow communication with the master)
 	 */
@@ -207,6 +207,4 @@ public class Jrosparam {
 		String out = note+"\n"+cmds+"\n"+footnote+"\n";
 		return out;
 	}
-
-
 }
