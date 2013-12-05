@@ -5,4 +5,4 @@
  * @author Jaroslav Vitku
  *
  */
-package ctu.nengoros;
+package ctu.nengoros.rosparam;
