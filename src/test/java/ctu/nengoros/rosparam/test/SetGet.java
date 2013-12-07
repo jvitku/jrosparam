@@ -28,7 +28,7 @@ public class SetGet extends RosCommunicationTest{
 		
 
 		try {
-			r = new RosRunner(new String[]{"ctu.nengoros.rosparam.Rosparam","/use_sim_time:=false"});
+			r = new RosRunner(new String[]{"ctu.nengoros.rosparam.RosparamNode","/use_sim_time:=false"});
 			r.start();
 			assertTrue(r.isRunning());
 

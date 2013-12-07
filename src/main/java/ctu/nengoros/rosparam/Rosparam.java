@@ -1,31 +1,45 @@
 package ctu.nengoros.rosparam;
 
-
 import org.apache.commons.logging.Log;
-import org.ros.concurrent.CancellableLoop;
 import org.ros.namespace.GraphName;
 import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
 import org.ros.node.parameter.ParameterTree;
 
 /**
- * First, basic implementation of rosparam node. This just starts and waits for commands.
+ * First, basic implementation of rosparam (@see RosparamNode). The RosparamNode just starts and 
+ * waits for commands.
  * Assumed that the RosRunner is used, the RosRunner.start() uses awaitStart method, so 
  * we can start node and immediately call set, get().. methods.
  *  
  * @author Jaroslav Vitku
  *
  */
-public class Rosparam extends AbstractNodeMain implements RosparamInt{
+public abstract class Rosparam extends AbstractNodeMain implements RosparamInt{
 
 	Log l;
-	private ParameterTree pt;
-	private final int sleeptime = 50;
-	private boolean coreRunning = false;	// assume that the core is running after onStart is called
-	private ParameterTreeCrawler ptc;
+	protected ParameterTree pt;
+	protected ParameterTreeCrawler ptc;
+	protected final int sleeptime = 50;
+	
+	// assume that the core is running after onStart is called
+	// set this to true in the onStart method
+	protected boolean coreRunning = false;	
+	
+	
 	@Override
 	public GraphName getDefaultNodeName() { return GraphName.of("jrosparam"); }
+	
+	@Override
+	public void onStart(ConnectedNode connectedNode){
+		this.coreRunning = true;
 
+		pt = connectedNode.getParameterTree();
+		ptc = new ParameterTreeCrawler(pt);
+	}
+	
+/*
+	// moved to the RosparamNode
 	@Override
 	public void onStart(ConnectedNode connectedNode){
 		this.coreRunning = true;
@@ -46,7 +60,7 @@ public class Rosparam extends AbstractNodeMain implements RosparamInt{
 				Thread.sleep(sleeptime);
 			}
 		});
-	}
+	}*/
 
 	@Override
 	public boolean coreRunning() { return this.coreRunning; }
@@ -74,8 +88,6 @@ public class Rosparam extends AbstractNodeMain implements RosparamInt{
 		l.debug("Setting key: "+key+" to boolean value: "+value);
 		pt.set(key, value);
 	}
-
-	
 	
 	@Override
 	public String getString(String key) throws Exception {

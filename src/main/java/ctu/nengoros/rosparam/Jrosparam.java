@@ -61,7 +61,7 @@ public class Jrosparam {
 
 		RosRunner r;
 		try {
-			r = new RosRunner(new String[]{"ctu.nengoros.rosparam.Rosparam","/use_sim_time:=false"});
+			r = new RosRunner(new String[]{"ctu.nengoros.rosparam.RosparamNode","/use_sim_time:=false"});
 		} catch (Exception e) {
 			System.err.println("ERROR: could not start the rosparam node! Roscore launched??");
 			e.printStackTrace();
