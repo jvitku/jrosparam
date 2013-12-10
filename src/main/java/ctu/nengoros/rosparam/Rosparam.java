@@ -26,7 +26,6 @@ public abstract class Rosparam extends AbstractNodeMain implements RosparamInt{
 	// set this to true in the onStart method
 	protected boolean coreRunning = false;	
 	
-	
 	@Override
 	public GraphName getDefaultNodeName() { return GraphName.of("jrosparam"); }
 	
