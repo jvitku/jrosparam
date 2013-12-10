@@ -4,6 +4,12 @@ import org.ros.concurrent.CancellableLoop;
 import org.ros.namespace.GraphName;
 import org.ros.node.ConnectedNode;
 
+/**
+ * Implementation (actual ROS node) of abstract RosParam class
+ * 
+ * @author Jaroslav Vitku
+ *
+ */
 public class RosparamNode extends Rosparam{
 
 	@Override
@@ -13,7 +19,6 @@ public class RosparamNode extends Rosparam{
 	public void onStart(ConnectedNode connectedNode){
 		
 		super.onStart(connectedNode);
-		
 		l = connectedNode.getLog();
 		
 		// ROS uses these cancellable loops

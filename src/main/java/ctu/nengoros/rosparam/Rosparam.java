@@ -17,10 +17,10 @@ import org.ros.node.parameter.ParameterTree;
  */
 public abstract class Rosparam extends AbstractNodeMain implements RosparamInt{
 
-	Log l;
-	protected ParameterTree pt;
-	protected ParameterTreeCrawler ptc;
-	protected final int sleeptime = 50;
+	public Log l;
+	public ParameterTree pt;
+	public ParameterTreeCrawler ptc;
+	public final int sleeptime = 50;
 	
 	// assume that the core is running after onStart is called
 	// set this to true in the onStart method
@@ -37,97 +37,75 @@ public abstract class Rosparam extends AbstractNodeMain implements RosparamInt{
 		pt = connectedNode.getParameterTree();
 		ptc = new ParameterTreeCrawler(pt);
 	}
-	
-/*
-	// moved to the RosparamNode
-	@Override
-	public void onStart(ConnectedNode connectedNode){
-		this.coreRunning = true;
-		l = connectedNode.getLog();
-		pt = connectedNode.getParameterTree();
-		ptc = new ParameterTreeCrawler(pt);
-		
-		// ROS uses these cancellable loops
-		connectedNode.executeCancellableLoop(new CancellableLoop() {
-
-			@Override
-			protected void setup() {
-				l.info("Rosparam node Launched! Waiting for commands..");
-			}
-
-			@Override
-			protected void loop() throws InterruptedException {
-				Thread.sleep(sleeptime);
-			}
-		});
-	}*/
 
 	@Override
 	public boolean coreRunning() { return this.coreRunning; }
 
 	@Override
 	public void set(String key, String value) {
+		awaitParamsReady();
 		l.debug("Setting key: "+key+" to String value: "+value);
 		pt.set(key, value);
 	}
 
 	@Override
 	public void set(String key, Integer value) {
+		awaitParamsReady();
 		l.debug("Setting key: "+key+" to Integer value: "+value);
 		pt.set(key, value);
 	}
 
 	@Override
 	public void set(String key, Double value) {
+		awaitParamsReady();
 		l.debug("Setting key: "+key+" to Double value: "+value);
 		pt.set(key, value);
 	}
 
 	@Override
 	public void set(String key, boolean value) {
+		awaitParamsReady();
 		l.debug("Setting key: "+key+" to boolean value: "+value);
 		pt.set(key, value);
 	}
 	
 	@Override
 	public String getString(String key) throws Exception {
+		awaitParamsReady();
 		l.debug("Getting String by the key: "+key);
 		return pt.getString(key);
 	}
 
 	@Override
 	public Integer getInteger(String key) throws Exception {
+		awaitParamsReady();
 		l.debug("Getting Integer by the key: "+key);
 		return pt.getInteger(key);
 	}
 
 	@Override
 	public Double getDouble(String key) throws Exception {
+		awaitParamsReady();
 		l.debug("Getting Double by the key: "+key);
 		return pt.getDouble(key);
 	}
 
 	@Override
 	public Boolean getBoolean(String key) throws Exception {
+		awaitParamsReady();
 		l.debug("Getting Boolean by the key: "+key);
 		return pt.getBoolean(key);
 	}
 
 	@Override
 	public void delete(String key){
+		awaitParamsReady();
 		pt.delete(key);
 	}
 
 	@Override
 	public String printTree() {
-		// concurrency..
-		while(ptc==null){
-			try {
-				Thread.sleep(10);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
+		awaitParamsReady();
 		return ptc.getAll();
 	}
 
@@ -139,5 +117,15 @@ public abstract class Rosparam extends AbstractNodeMain implements RosparamInt{
 			return "Not found";
 		}
 		return val;
+	}
+	
+	private final void awaitParamsReady(){
+		while(ptc==null || pt==null){
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }
