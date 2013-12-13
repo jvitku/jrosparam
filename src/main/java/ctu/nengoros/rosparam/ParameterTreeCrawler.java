@@ -8,6 +8,7 @@ import org.ros.node.parameter.ParameterTree;
 
 public class ParameterTreeCrawler {
 
+	public final String me="[ParameterTreeCrawler] ";
 	private final ParameterTree t;
 
 	public ParameterTreeCrawler(ParameterTree par){
@@ -21,12 +22,12 @@ public class ParameterTreeCrawler {
 	public String getAll(){
 
 		if(isEmpty())
-			return "No params!";
+			return me+"No params!";
 
 		Collection<GraphName> l = t.getNames();
 		GraphName[] g = l.toArray(new GraphName[0]);
 
-		String out = "------------------------- parameters are:";
+		String out = me+"------------------------- parameters are:";
 		for(int i=0; i<g.length; i++){
 			try {
 				out = out +"\nParam: "+g[i]+"  \tval: "+this.getParam(g[i]);
@@ -89,7 +90,7 @@ public class ParameterTreeCrawler {
 		Collection<GraphName> l = t.getNames();
 		GraphName[] g = l.toArray(new GraphName[0]);
 
-		System.out.println("------------------------- names:");
+		System.out.println(me+"------------------------- names:");
 		for(int i=0; i<g.length; i++){
 			System.out.print(" "+g[i]);
 		}
@@ -103,13 +104,20 @@ public class ParameterTreeCrawler {
 		return false;
 	}
 	
-	public void printAllRemapps(Map<GraphName,GraphName> remaps){
-		GraphName[] names = null;
-		names = remaps.keySet().toArray(names);
-		for(int i=0; i<names.length; i++){
-			System.out.println("name: "+i+" is: "+names[i]+" value is: "+remaps.get(names[i]));
+	public String getAllRemapps(Map<GraphName,GraphName> remaps){
+		if(remaps.isEmpty()){
+			return me+"No remappings!";
 		}
+			
+		//GraphName[] names = null;
+		GraphName []names = remaps.keySet().toArray(new GraphName[0]);
+		String out = me+"Remappings:\n";
+		for(int i=0; i<names.length; i++){
+			out = out + i+"name: "+names[i]+" -> "+remaps.get(names[i])+"\n";
+		}
+		return out +"------------------------------";
 	}
+	
 	
 }
 
