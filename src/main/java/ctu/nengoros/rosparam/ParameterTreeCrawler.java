@@ -1,6 +1,7 @@
 package ctu.nengoros.rosparam;
 
 import java.util.Collection;
+import java.util.Map;
 
 import org.ros.namespace.GraphName;
 import org.ros.node.parameter.ParameterTree;
@@ -101,6 +102,19 @@ public class ParameterTreeCrawler {
 		}
 		return false;
 	}
+	
+	public void printAllRemapps(Map<GraphName,GraphName> remaps){
+		GraphName[] names = null;
+		names = remaps.keySet().toArray(names);
+		for(int i=0; i<names.length; i++){
+			System.out.println("name: "+i+" is: "+names[i]+" value is: "+remaps.get(names[i]));
+		}
+	}
+	
 }
+
+
+
+
 
 
